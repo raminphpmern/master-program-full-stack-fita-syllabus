@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Form Validation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .error { color: red; }
+    </style>
+</head>
+<body>
+
+<form id="myForm">
+    <label>Name:</label>
+    <input type="text" id="name"><br><br>
+    
+    <label>Email:</label>
+    <input type="text" id="email"><br><br>
+    
+    <button type="submit">Submit</button>
+    <div id="errorMsg" class="error"></div>
+</form>
+
+<script>
+$(document).ready(function() {
+    $('#myForm').submit(function(event) {
+        event.preventDefault();  // Stop the form from submitting by default
+        var name = $('#name').val().trim();
+        var email = $('#email').val().trim();
+        var errorMsg = '';
+
+        // Simple validation rules
+        if(name === '') {
+            errorMsg += 'Name is required.<br>';
+        }
+        if(email === '') {
+            errorMsg += 'Email is required.<br>';
+        } else if(!email.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)) {
+            errorMsg += 'Email is invalid.<br>';
+        }
+
+        if(errorMsg !== '') {
+            $('#errorMsg').html(errorMsg);
+        } else {
+            $('#errorMsg').html('');
+            alert('Form submitted successfully!');
+            // Here you can actually submit the form using AJAX or normal post
+            // this.submit();
+        }
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("p.test").click(function () {
+                $(this).hide(1000);
+            });
+        });
+
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     const testParagraphs = document.querySelectorAll("p.test");
+
+        //     testParagraphs.forEach(function (para) {
+        //         para.addEventListener("click", function () {
+        //             this.style.display = "none";
+        //         });
+        //     });
+        // });
+    </script>
+</head>
+
+<body>
+
+    <p class="test">If you click on me, I will disappear.</p>
+    <p>Click me away!</p>
+    <p class="">Click me too!</p>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Toolbar Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #toolbar {
+            background: #333;
+            padding: 10px;
+        }
+        #toolbar button {
+            color: white;
+            background: #555;
+            border: none;
+            padding: 8px 12px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        #content {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="toolbar">
+    <button id="showMsg">Show Message</button>
+    <button id="changeBg">Change Background</button>
+    <button id="hideContent">Hide Content</button>
+    <button id="showContent">Show Content</button>
+</div>
+
+<div id="content">
+    Welcome to the jQuery Toolbar Example!
+</div>
+
+<script>
+    $(document).ready(function() {
+        // Show alert on button click
+        $('#showMsg').click(function() {
+            alert('Toolbar Button Clicked!');
+        });
+
+        // Change content background color
+        $('#changeBg').click(function() {
+            $('body').css('background', 'green');
+        });
+
+        // Hide content
+        $('#hideContent').click(function() {
+            $('#content').hide();
+        });
+
+        // Show content
+        $('#showContent').click(function() {
+            $('#content').show();
+        });
+    });
+</script>
+
+</body>
+</html>
